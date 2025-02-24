@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from .models import Todo
 
-def home(request):
-    return render(request,'home.html')
+def todo_list(request):
+    todos = Todo.objects.all()
+    return render(request,"todo_list.html",{"todo": todos})
     

@@ -1,10 +1,11 @@
-# Ambiente virtual
 venv/
 .env
+
 *.pyc
 __pycache__/
-db.sqlite3  # Se estiver usando SQLite
 
-# Configurações locais
+
+db.sqlite3
+
+
 *.log
-*.env

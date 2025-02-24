@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TWTodos</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Passion+One:wght@400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sriracha&display=swap");
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-header">
+        <a href="#">TWTodos</a>
+      </div>
+    </nav>
+    <main>
+      <h1>Lista de tarefas</h1>
+
+      {% if todo%}
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Titulo</th>
+            <th>Criado em</th>
+            <th>Data de entrega</th>
+            <th>Finalizado em</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for todo in todo %}
+          <tr>
+            <td>{{todo.id}}</td>
+            <td>{{todo.title}}</td>
+            <td>{{todo.created_at}}</td>
+            <td>{{todo.deadline}}</td>
+            <td>{{todo.fineshed_at | default:"" }}</td>
+            <td>
+              <a href="#" class="button-actions conclude">Concluir</a>
+              <a href="#" class="button-actions delete">Excluir</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p>Não há tarefas cadastradas</p>
+      {% endif %}
+    </main>
+  </body>
+</html>
