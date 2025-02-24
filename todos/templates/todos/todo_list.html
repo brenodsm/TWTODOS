@@ -19,7 +19,7 @@
     <main>
       <h1>Lista de tarefas</h1>
 
-      {% if todo%}
+      {% if todo_list%}
       <table class="table">
         <thead>
           <tr>
@@ -32,7 +32,7 @@
           </tr>
         </thead>
         <tbody>
-          {% for todo in todo %}
+          {% for todo in todo_list %}
           <tr>
             <td>{{todo.id}}</td>
             <td>{{todo.title}}</td>
