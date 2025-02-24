@@ -50,6 +50,9 @@
       {% else %}
       <p>Não há tarefas cadastradas</p>
       {% endif %}
+      <a href="{% url 'todo_create' %}" class="button-actions conclude"
+        >Nova Tarefa</a
+      >
     </main>
   </body>
 </html>
