@@ -38,10 +38,18 @@
             <td>{{todo.title}}</td>
             <td>{{todo.created_at}}</td>
             <td>{{todo.deadline}}</td>
-            <td>{{todo.fineshed_at | default:"" }}</td>
+            <td>{{todo.finished_at| default:"" }}</td>
             <td>
-              <a href="#" class="button-actions conclude">Concluir</a>
-              <a href="#" class="button-actions delete">Excluir</a>
+              <a 
+              href="{% url "todo_complete" todo.id %}" 
+              class="button-actions conclude">Concluir
+            </a>
+              <a href="{% url "todo_delete" todo.id %}" class="button-actions delete">Excluir</a>
+              <a
+                href="{% url 'todo_update' todo.id %}"
+                class="button-actions conclude"
+                >Editar</a
+              >
             </td>
           </tr>
           {% endfor %}

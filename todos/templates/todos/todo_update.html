@@ -13,15 +13,12 @@
   <body>
     <nav>
       <div class="nav-header">
-        <a href="{% url 'todo_list' %}">TWTodos</a>
+        <a href="#">TWTodos</a>
       </div>
     </nav>
     <main>
-      <h1>Novas Tarefas</h1>
-      <form method="POST">
-        {% csrf_token %} {{form}}
-        <button type="submit">Salvar</button>
-      </form>
+      <h1>Editar tarafas</h1>
+      
     </main>
   </body>
 </html>
